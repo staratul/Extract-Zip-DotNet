@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model dynamic
+@{
+    ViewBag.Title = "Extract ZIP Files";
+}
+
+<h2>Extract ZIP Files</h2>
+
+@using (Html.BeginForm("ExtractZip", "Zip", FormMethod.Post))
+{
+    <div>
+        <label for="zipFilePath">Zip File Path:</label>
+        <input type="text" name="zipFilePath" id="zipFilePath" required />
+    </div>
+    <div>
+        <label for="extractToPath">Extract To Path:</label>
+        <input type="text" name="extractToPath" id="extractToPath" required />
+    </div>
+    <div>
+        <input type="submit" value="Extract" />
+    </div>
+}
+
+<p>@ViewBag.Message</p>
